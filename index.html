@@ -10,11 +10,12 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            background-color: rgb(231, 255, 255);
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         }
 
         html,body{
             height: 100%;
+            background-color: rgb(80, 80, 80);
         }
 
         .corpo{
@@ -23,11 +24,48 @@
             left: 50%;
             transform: translate(-50%, -50%);
             text-align: center;
+            
+           
         }
 
         img{
             width: 300px;
             height: auto;
+        }
+
+        .reviews{
+            background-color: white;
+            padding: 30px 60px;
+            border-radius: 10px;
+        }
+
+        #nome p{
+            font-weight: 400;
+            font-size: 20px;
+        }
+        
+        #profissao p{
+            font-weight: 700;
+            font-size: 25px;
+        }
+
+        #descricao p{
+            font-weight: 100;
+            font-size: 15px;
+            color: #a8a8a8;
+        }
+
+        .botoes{
+            margin-top: 20px;
+        }
+
+        button{
+            background-color: transparent;
+            border: none;
+            font-size: 50px;
+            color: blue;
+            cursor: pointer;
+            margin: 0 20px;
         }
     </style>
 </head>
@@ -36,15 +74,14 @@
         <div class="title">
             <h2>Nossas Reviews</h2>
             <div class="reviews">
-                <div class="review">
+                <div class="review" id="reviews">
                     <div id="image">
-                        
+                        <img src="diego.jpg">
                     </div>
                     <div id="nome">
-                    
                     </div>
                     <div id="profissao">
-
+                        
                     </div>
                     <div id="descricao">
                         
@@ -86,6 +123,7 @@
         var obj = [Diego, Andressa, Anatan];
         let i = 0;
         tamanho = obj.length;
+        
         document.getElementById('image').innerHTML = obj[i].image;
         document.getElementById('nome').innerHTML = `<p> ${obj[i].nome}</p>`;
         document.getElementById('profissao').innerHTML = `<p> ${obj[i].profissao}</p>`;
