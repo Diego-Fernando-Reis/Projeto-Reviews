@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CARROSSEL DE REVIEWS</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: rgb(231, 255, 255);
+        }
+
+        html,body{
+            height: 100%;
+        }
+
+        .corpo{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        img{
+            width: 300px;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="corpo">
+        <div class="title">
+            <h2>Nossas Reviews</h2>
+            <div class="reviews">
+                <div class="review">
+                    <div id="image">
+                        
+                    </div>
+                    <div id="nome">
+                    
+                    </div>
+                    <div id="profissao">
+
+                    </div>
+                    <div id="descricao">
+                        
+                    </div>
+                    <div class="botoes">
+                        <button id="btn1"><</button>
+                        <button id="btn2">></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var Diego = new Object();
+        var Andressa = new Object();
+        var Anatan = new Object();
+        
+        Diego = {
+            'image': '<img src="diego.jpg">',
+            'nome': 'Diego Fernando Reis Batista',
+            'profissao': 'Web Developer',
+            'descricao': 'lorem ipsum silor dolor at amet, sipsum dolonir at rarime'
+        }
+
+        Andressa = {
+            'image': '<img src="andressa.jpg">',
+            'nome': 'Andressa Beatriz Santana Correa Coelho',
+            'profissao': 'Animadora',
+            'descricao': 'lorem ipsum silor dolor at amet, sipsum dolonir at rarime'
+        }
+
+        Anatan = {
+            'image': '<img src="anatan.jpg">',
+            'nome': 'Anatan Texeira Patrício',
+            'profissao': 'Designer Gráfico',
+            'descricao': 'lorem ipsum silor dolor at amet, sipsum dolonir at rarime'
+        }
+
+        var obj = [Diego, Andressa, Anatan];
+        let i = 0;
+        tamanho = obj.length;
+        document.getElementById('image').innerHTML = obj[i].image;
+        document.getElementById('nome').innerHTML = `<p> ${obj[i].nome}</p>`;
+        document.getElementById('profissao').innerHTML = `<p> ${obj[i].profissao}</p>`;
+        document.getElementById('descricao').innerHTML = `<p> ${obj[i].descricao}</p>`;
+        btn2.addEventListener('click', ()=>{
+            
+            if(i<tamanho){
+                
+                i=i+1;
+                if(i<obj.length){
+                    i=i;
+                }else{
+                    i=0;
+                }
+                document.getElementById('image').innerHTML = obj[i].image;
+                document.getElementById('nome').innerHTML = `<p> ${obj[i].nome}</p>`;
+                document.getElementById('profissao').innerHTML = `<p> ${obj[i].profissao}</p>`;
+                document.getElementById('descricao').innerHTML = `<p> ${obj[i].descricao}</p>`;
+                
+            }
+            
+            
+        })
+        btn1.addEventListener('click', ()=>{
+            
+            if(i<obj.length){
+                i=i-1;
+                if(i<0){
+                    i = tamanho -1;
+                }else{
+                    i=i;
+                }
+                document.getElementById('image').innerHTML = obj[i].image;
+                document.getElementById('nome').innerHTML = `<p> ${obj[i].nome}</p>`;
+                document.getElementById('profissao').innerHTML = `<p> ${obj[i].profissao}</p>`;
+                document.getElementById('descricao').innerHTML = `<p> ${obj[i].descricao}</p>`;
+            }
+            
+            
+        })
+    </script>
+</body>
+</html>
